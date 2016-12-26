@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Módulo Docentes</string>
+    <string name="cedula_de_identidad">Cédula de Identidad</string>
+    <string name="modulo_docente">Módulo Docente</string>
+    <string name="ingresar">INGRESAR</string>
+    <string name="contrasenia">Contraseña</string>
+    <string name="modulo_representante">Módulo Representante</string>
+    <string name="iniciar_sesion">Iniciar Sesión</string>
+    <string name="esta_semana">Esta Semana</string>
+    <string name="este_mes">Este Mes</string>
+    <string name="este_año">Este Año</string>
+    <string name="iniciandoSesion">Iniciando Sesión. Por favor espere...</string>
+    <string name="bienvenidoCliente">Bienvenido(a)</string>
+    <string name="lista_sin_eventos">Sin eventos para mostrar</string>
+    <string name="escriba_su_mensaje">escriba su mensaje</string>
+    <string name="docentes">Docentes</string>
+    <string name="representante">REP</string>
+    <string name="docente">DOC</string>
+    <string name="cargando_eventos_npor_favor_espere">Cargando Eventos\nPor favor espere...</string>
+    <string name="m_dulo_representante">Módulo Representante</string>
+    <string name="confirmarCerrarSesion">¿Está seguro que desea cerrar su sesión?</string>
+    <string name="no">NO</string>
+    <string name="si">SI</string>
+    <string name="estimado_a">Estimado(a)</string>
+    <string name="apellidos">APELLIDOS</string>
+    <string name="nombres">NOMBRES</string>
+    <string name="se_cerrar_n_las_dem_s_sesiones_que_haya_iniciado_en_otros_dispositivos_desea_continuar">Se cerrarán las demás sesiones que haya iniciado en otros dispositivos. ¿Desea continuar?</string>
+    <string name="m_dulo_representantes">Módulo Representantes</string>
+    <string name="cambiar_contrase_a">Cambiar Contraseña</string>
+    <string name="ingrese_su_clave_actual">Ingrese su contraseña actual</string>
+    <string name="ingrese_su_nueva_contrase_a">Ingrese su nueva contraseña</string>
+    <string name="confirme_su_nueva_contrase_a">Confirme su nueva contraseña</string>
+    <string name="cambiar_clave">CAMBIAR CONTRASEÑA</string>
+    <string name="m_dulo_docente">Módulo Docentes</string>
+    <string name="alumno">ALUMNO</string>
+</resources>
