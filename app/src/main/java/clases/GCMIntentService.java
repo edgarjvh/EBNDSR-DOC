@@ -78,11 +78,16 @@ public class GCMIntentService extends IntentService
                         sPrefs = getApplicationContext().getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
                     }
 
+                    Log.d("EJVH result doc",result);
+
                     switch (result){
                         case "INCOMING":
                             JSONObject array = new JSONObject(jsonObj.get("Mensaje").toString());
 
-                            if (array.getInt("Via") == 0){ // se valida que sea un docente quien este enviando el msj
+                            Log.d("EJVH result doc via",Integer.toString(array.getInt("Via")));
+                            Log.d("EJVH result doc Msj",jsonObj.get("Mensaje").toString());
+
+                            if (array.getInt("Via") == 1){ // se valida que sea un docente quien este enviando el msj
                                 // se convierte la fecha quitando caracteres no numericos
 
                                 String value = "";
@@ -101,7 +106,7 @@ public class GCMIntentService extends IntentService
                                         array.getString("Texto")
                                 );
 
-                                int idRepresentante = array.getInt("idRepresentante");
+                                int idRepresentante = array.getInt("IdRepresentante");
 
                                 if (sPrefs.getString(PROPERTY_CONVERSATIONS,"").equals("")){
                                     conversaciones.add(mensaje);
@@ -133,6 +138,8 @@ public class GCMIntentService extends IntentService
                             break;
 
                         case "UPDATE":
+                            Log.d("EJVH update doc via",jsonObj.get("Via").toString());
+
                             if (jsonObj.get("Via").toString().equals("0")){ // si el representante esta confirmando....
                                 if (!sPrefs.getString(PROPERTY_CONVERSATIONS,"").equals("")){
                                     Type type = new TypeToken<ArrayList<lvMensajesItems>>() {}.getType();
@@ -238,7 +245,7 @@ public class GCMIntentService extends IntentService
         long vibrate[] = {0,100,100};
 
         NotificationCompat.Builder builder = (NotificationCompat.Builder) new NotificationCompat.Builder(getBaseContext())
-                .setSmallIcon(R.drawable.parent)
+                .setSmallIcon(R.drawable.teacher)
                 .setAutoCancel(true)
                 .setContentIntent(pIntent)
                 .setContentTitle(nombreRepresentante)
@@ -247,7 +254,7 @@ public class GCMIntentService extends IntentService
                 .setWhen(fecha)
                 .setDefaults(Notification.DEFAULT_LIGHTS)
                 .setDefaults(Notification.DEFAULT_SOUND)
-                .setLargeIcon(BitmapFactory.decodeResource(getResources(),R.drawable.representante_icon));
+                .setLargeIcon(BitmapFactory.decodeResource(getResources(),R.drawable.docente_large));
 
         boolean isForeground = sPrefs.getBoolean(PROPERTY_IS_FOREGROUND,false);
         int currentTab = sPrefs.getInt(PROPERTY_CURRENT_TAB,0);

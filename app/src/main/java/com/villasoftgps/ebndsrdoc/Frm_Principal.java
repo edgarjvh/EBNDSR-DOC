@@ -331,7 +331,7 @@ public class Frm_Principal extends Activity {
                         newMensaje.add(new lvMensajesItems(
                                 newMensaje.size() + 1,              // tempID
                                 0,                                  // idMensaje
-                                idRepresentante,                    // via
+                                0,                                  // via
                                 docente.getId(),                    // idDocente
                                 idRepresentante,                    // idRepresentante
                                 3,                                  // status 3 = pbar visible

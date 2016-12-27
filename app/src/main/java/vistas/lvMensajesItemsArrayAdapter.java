@@ -20,8 +20,8 @@ public class lvMensajesItemsArrayAdapter extends BaseAdapter {
 
     private ArrayList<lvMensajesItems> data;
     private Context c;
-    private static final int ROW_DOC = 1;
-    private static final int ROW_REP = 0;
+    private static final int ROW_DOC = 0;
+    private static final int ROW_REP = 1;
     private static final int STATUS_SENT = 0;
     private static final int STATUS_RECEIVED = 1;
     private static final int STATUS_READ = 2;

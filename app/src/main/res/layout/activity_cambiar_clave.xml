@@ -8,6 +8,112 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/background"
     tools:context="com.villasoftgps.ebndsrdoc.Frm_CambiarClave">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/relEncabezado"
+        android:layout_marginBottom="20dp">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/imgModulo"
+            android:scaleType="centerInside"
+            android:src="@drawable/docente_icon"
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/app_name"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/m_dulo_docente"
+            android:id="@+id/lblModuloDocente"
+            android:textSize="14sp"
+            android:textStyle="bold|italic"
+            android:gravity="center_horizontal|center_vertical"
+            android:textAlignment="gravity"
+            android:textColor="#000000"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/cambiar_contrase_a"
+            android:id="@+id/lblTitulo"
+            android:textSize="24sp"
+            android:textStyle="bold|italic"
+            android:gravity="center_horizontal|center_vertical"
+            android:textAlignment="gravity"
+            android:textColor="#000000"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/lblModuloDocente"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/relFields"
+        android:layout_below="@+id/relEncabezado">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:id="@+id/txtClaveActual"
+            android:hint="@string/ingrese_su_clave_actual"
+            android:gravity="center_horizontal|center_vertical"
+            android:textAlignment="gravity"
+            android:inputType="textPassword"
+            android:textStyle="bold|italic"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#5d8357"
+            android:textSize="18sp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/school_board"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:id="@+id/txtClaveNueva"
+            android:layout_below="@+id/txtClaveActual"
+            android:hint="@string/ingrese_su_nueva_contrase_a"
+            android:gravity="center_horizontal|center_vertical"
+            android:textAlignment="gravity"
+            android:inputType="textPassword"
+            android:textStyle="bold|italic"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#5d8357"
+            android:textSize="18sp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/school_board"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:id="@+id/txtConfirmarClave"
+            android:layout_below="@+id/txtClaveNueva"
+            android:hint="@string/confirme_su_nueva_contrase_a"
+            android:gravity="center_horizontal|center_vertical"
+            android:textAlignment="gravity"
+            android:inputType="textPassword"
+            android:textStyle="bold|italic"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#5d8357"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/school_board"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/btnCambiarClave"
+            android:layout_below="@+id/txtConfirmarClave"
+            android:background="@android:color/holo_blue_dark"
+            android:text="@string/cambiar_clave"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_marginTop="20dp"/>
+    </RelativeLayout>
 </RelativeLayout>

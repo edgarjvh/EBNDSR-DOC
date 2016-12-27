@@ -4,10 +4,17 @@
     android:id="@+id/activity_perfil"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/background"
+    android:padding="5dp"
     tools:context="com.villasoftgps.ebndsrdoc.Frm_Perfil">
 
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/lvPerfil"
+        android:divider="@null"
+        android:dividerHeight="0dp"
+        android:background="#20000000">
+
+    </ListView>
 </RelativeLayout>
