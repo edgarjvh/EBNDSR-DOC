@@ -46,6 +46,7 @@ import java.util.Date;
 import java.util.Locale;
 import clases.RegistrarGCM;
 import clases.Docente;
+import clases.Respuesta;
 import controles.AutoResizeTextView;
 import vistas.CustomProgress;
 import vistas.LogoutDialog;
@@ -560,7 +561,7 @@ public class Frm_Principal extends Activity {
             parametros.add(1, "origen*" + params[1]);
             parametros.add(2, "eliminarGcmDoc");
 
-            respuesta ws = new respuesta();
+            Respuesta ws = new Respuesta();
             Object response = ws.getData(parametros);
 
             try {
@@ -623,7 +624,7 @@ public class Frm_Principal extends Activity {
             parametros.add(5, "fechaHora*" + params[5]);
             parametros.add(6, "enviarMensaje");
 
-            respuesta ws = new respuesta();
+            Respuesta ws = new Respuesta();
             response = ws.getData(parametros);
 
             try
@@ -699,7 +700,7 @@ public class Frm_Principal extends Activity {
             parametros.add(0, "idDocente*" + params[0]);
             parametros.add(1, "getAlumnosRepresentantes");
 
-            respuesta ws = new respuesta();
+            Respuesta ws = new Respuesta();
             response = ws.getData(parametros);
 
             try
@@ -822,7 +823,7 @@ public class Frm_Principal extends Activity {
             parametros.add(1, "tipoCalendario*"+ params[1]);
             parametros.add(2, "getCalendarioDocente");
 
-            respuesta ws = new respuesta();
+            Respuesta ws = new Respuesta();
             response = ws.getData(parametros);
 
             try {
@@ -943,7 +944,7 @@ public class Frm_Principal extends Activity {
             parametros.add(1, "estado*" + params[1]);
             parametros.add(2, "confirmarMensaje");
 
-            respuesta ws = new respuesta();
+            Respuesta ws = new Respuesta();
             Object response = ws.getData(parametros);
 
             try
@@ -963,43 +964,6 @@ public class Frm_Principal extends Activity {
                 Log.d("EJVH CATCH", e.getMessage());
             }
             return null;
-        }
-    }
-
-    private static class respuesta {
-        Object getData(ArrayList<Object> parametros){
-            Object data;
-            String namespace = "http://schooltool.org/";
-            String direccion = "http://154.42.65.212:9600/schooltool.asmx";
-            String metodo = parametros.get(parametros.size() - 1).toString();
-            String soapAction = namespace + metodo;
-
-            SoapObject request = new SoapObject(namespace, metodo);
-            String property[];
-            PropertyInfo pi;
-
-            for (int i = 0; i < parametros.size() - 1; i++){
-                property = parametros.get(i).toString().split("\\*");
-                pi = new PropertyInfo();
-                pi.setName(property[0]);
-                pi.setValue(property[1]);
-                pi.setType(property[1].getClass());
-                request.addProperty(pi);
-            }
-
-            SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
-            envelope.dotNet = true;
-            envelope.setOutputSoapObject(request);
-            HttpTransportSE httpTransport = new HttpTransportSE(direccion);
-
-            try {
-                httpTransport.call(soapAction, envelope);
-                data = envelope.getResponse();
-            } catch (Exception exception) {
-                data = exception.toString();
-            }
-
-            return data;
         }
     }
 
